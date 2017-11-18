@@ -8,6 +8,7 @@
 		<h2>Welcome To Tutorial 8 APAP</h2>
 		<a href="/login">Login</a><br/>
 		<a th:if="${#httpServletRequest.isUserInRole('ADMIN')}" href="/course/viewall">View All Courses</a><br/>
+		<a th:if="${#httpServletRequest.isUserInRole('ADMIN')}" href="/student/viewall">View All Students</a><br/>
 		<a th:if="${#httpServletRequest.isUserInRole('USER')}" href="/student/viewall">View All Students</a><br/>
 	</body>
 </html>
