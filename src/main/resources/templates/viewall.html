@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>View All Students</title>
+        <link rel="stylesheet" href="/css/bootstrap.min.css" />
+         <link rel="stylesheet" href="/css/bootstrap.min.css" />
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css"
+ 		href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" />
+		<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+        <script type="text/javascript">
+        	$(document).ready(function(){
+        		$('#table_id').DataTable();
+        	});
+        </script>
+    </head>
+    <body>
+    	
+        <h1>All Students</h1>
+        <table id="table_id" class="display">
+        	<thead>
+        	<tr>
+        		<th class="text-center">No</th>
+        		<th class="text-center">NPM</th>
+        		<th class="text-center">Nama</th>
+        		<th class="text-center">GPA</th>
+        		<th class="text-center">Cumlaude</th>
+        		<th class="text-center">Action</th>
+        	</tr>
+        </thead>
+        <tbody>
+        	<tr th:each="student, iterationStatus: ${students}">
+        		<td class="text-center" th:text="${iterationStatus.count}">No</td>
+        		<td class="text-center" th:text="${student.npm}">NPM</td>
+        		<td class="text-center" th:text="${student.name}">Nama</td>
+        		<td class="text-center" th:text="${student.gpa}">GPA</td>
+        		<td class="text-center" th:text="${student.gpa >= 3.49}? 'Cumlaude!' : 'Sangat Memuaskan!'">Predikat</td>
+        		<td class = "text-center">
+        			<div class="btn-group" role="group"> 
+        				<a th:href="'/student/delete/' + ${student.npm}">
+        					<button type="button" class="btn btn-danger">Delete</button>
+        				</a>
+        				<a th:href="'/student/update/' + ${student.npm}">
+        					<button type="button" class="btn btn-success">Update</button>
+        					
+        				</a>
+        			</div>
+        		</td>
+        	</tr>
+        </tbody>
+        </table>
+        
+    </body>
+</html>

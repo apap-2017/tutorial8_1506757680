@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<title>Add student</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+	
+	<h1 class="page-header">Tambah Mahasiswa</h1>
+
+	<form action="/student/add/submit" method="get">
+		<div class="from-group">
+			<label>Kode Ruang* </label>
+			<input type="text" name="kodeRuang" class="form-control" required="required"/>
+		</div>
+		<div class="from-group">
+			<label>Deskripsi Ruangan*</label>
+			<input type="text" name="deskripsi" class="form-control" required="required"/>
+		</div>
+		<div class="from-group">
+			<label>Tipe Ruangan *</label>
+			
+				<input type="radio" name="tipe" class="form-control" value="1"  required="required"/> Auditorium <br/>
+				<input type="radio" name="tipe" class="form-control" value="0"  required="required"/> Office Room
+			
+		</div>
+		<div class="from-group">
+			<label>Panjang*</label>
+			<input type="text" name="panjang" class="form-control" required="required"/>
+		</div>
+		<div class="from-group">
+			<label>Lebar*</label>
+			<input type="text" name="lebar" class="form-control" required="required"/>
+		</div>
+		<div class="from-group">
+			<label>Harga Sewa*</label>
+			<input type="text" name="hargaSewa" class="form-control" required="required"/>
+		</div>
+		<div class="from-group">
+			<label>Lokasi*</label>
+			<input type="text" name="lokasi" class="form-control" required="required"/>
+		</div>
+		<div class="from-group">
+			<label>Fasilitas*</label>
+			<input type="text" name="fasilitas" class="form-control" required="required"/>
+		</div>
+		<div class="from-group">
+			<label>Status*</label>
+				<input type="radio" name="status" class="form-control" value="0" required="required"/> Not <br/>
+				<input type="radio" name="status" class="form-control" value="1" required="required"/> Avaiable
+			
+		</div>
+		<br/>
+		<div class="from-group">
+			<button type="submit" name="action" value="update" class="btn btn-primary">Add</button>
+		</div>
+	</form>
+
+</body>
+
+</html>
+

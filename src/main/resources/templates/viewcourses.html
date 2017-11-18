@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>View Courses by ID</title>
+        
+    </head>
+    <body>
+    
+       	<h3 th:text="'ID = ' + ${course.id_course}">Course ID</h3>
+       	<h3 th:text="'Nama = ' + ${course.name}">course Name</h3>
+       	<h3 th:text="'SKS = ' + ${course.credits}">credits</h3>
+       	
+       	<h3>Mahasiswa yang mengambil</h3>
+       	<ul th:each="student,iterationStatus: ${course.students}">
+       		<li th:text="${student.npm} + '-' + ${student.name}"> 
+       		Nama mahasiswa
+       		</li>
+       	</ul>
+    </body>
+</html>
+
